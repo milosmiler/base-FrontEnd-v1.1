@@ -1,72 +1,53 @@
 const gulp = require('gulp'),
       sass = require('gulp-sass'),
       pug = require('gulp-pug'),
+      imagemin = require('gulp-imagemin'),
       autoprefixer = require('gulp-autoprefixer'),
       browserSync = require('browser-sync').create();
 
-// gulp.task('sass', () =>
-//     gulp.src('Components/Scss/*.scss')
-//         .pipe(sass({
-//             outputStyle: 'expended',
-//             sourceComments: false
-//         }))
-//         .pipe(autoprefixer({
-//             version: ['last 2 browsers']
-//         }))
-//         .pipe(gulp.dest('./dest/css'))
-//         .pipe(browserSync.stream())
-//     );
+// compilacions de sass a css
+gulp.task('sass', () =>
+    gulp.src('./Components/Scss/*.scss')
+        .pipe(sass({
+            outputStyle: 'expended',
+            sourceComments: false
+        }))
+        .pipe(autoprefixer({
+            version: ['last 2 browsers']
+        }))
+        .pipe(gulp.dest('./dest/css'))
+        .pipe(browserSync.stream())
+    );
 
-
-// gulp.task('pug', () =>
-//     gulp.src('Components/Pug/*.pug')
-//         .pipe(pug({
-//             pretty: true
-//         }))
-//         .pipe(gulp.dest('./dest'))
-//         .on('end', browserSync.reload)
-//     );
-
-
-
-// gulp.task('default',() => {
-
-//     browserSync.init({
-
-//         server:'./'
-//     });
-
-//     gulp.watch('Components/Scss/*.scss',['sass']);
-//     gulp.watch('Components/Pug/**/*.pug',['pug']);
-
-// })
-
-gulp.task('sass',() =>
-  gulp.src('./Components/Scss/*.scss')
-      .pipe(sass().on('error', sass.logError))
-      .pipe(autoprefixer({
-        browsers: ['last 2 versions']
-      }))
-      .pipe(gulp.dest('./dest/css'))
-      .pipe(browserSync.stream())
-);
-
+// compilacion gulp a html
 gulp.task('pug', () =>
-  gulp.src('./Components/Pug/*.pug')
-      .pipe(pug({
-        pretty: true
-      }))
-      .pipe(gulp.dest('./dest'))
-      .on('end', browserSync.reload)
+    gulp.src('./Components/Pug/*.pug')
+        .pipe(pug({
+            pretty: true
+        }))
+        .pipe(gulp.dest('./dest'))
+        .on('end', browserSync.reload)
+    );
+
+// optimizar imagenes
+gulp.task('imagemin', () =>
+    gulp.src('./Components/images/*')
+        .pipe(imagemin())
+        .pipe(gulp.dest('dist/images'))
 );
 
-gulp.task('default', () =>{
-  browserSync.init({
-    server : './Components'
-  });
-  gulp.watch('./Components/Scss/*.scss', ['sass']);
-  gulp.watch('./Components/Pug/**/*.pug', ['pug']);
-});
+
+// servido que mostrara los cambios
+gulp.task('default',() => {
+    browserSync.init({
+        server:'./dest'
+    });
+
+    gulp.watch('Components/Scss/*.scss',['sass']);
+    gulp.watch('Components/Pug/**/*.pug',['pug']);
+
+})
+
 
 
 
