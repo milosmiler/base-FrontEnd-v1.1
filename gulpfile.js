@@ -2,6 +2,8 @@ const gulp = require('gulp'),
       sass = require('gulp-sass'),
       pug = require('gulp-pug'),
       imagemin = require('gulp-imagemin'),
+      iconfontCss = require('gulp-iconfont-css'),
+      iconfont = require('gulp-iconfont'),
       autoprefixer = require('gulp-autoprefixer'),
       browserSync = require('browser-sync').create();
 
@@ -36,6 +38,28 @@ gulp.task('imagemin', () =>
         .pipe(gulp.dest('dist/images'))
 );
 
+// trasnformacion icon font
+
+ var fontName = 'demo-icons';
+ 
+  gulp.task('iconfont', function() {
+    gulp.src(['./Components/svg/*.svg'])
+      .pipe(iconfontCSS({
+        fontName: fontName,
+        targetPath: './Components/Scss/_iconfont.scss',
+        fontPath: '../fonts/'
+      }))
+      .pipe(iconfont({
+        fontName: fontName,
+        // Remove woff2 if you get an ext error on compile
+        formats: ['svg', 'ttf', 'eot', 'woff', 'woff2'],
+        normalize: true,
+        fontHeight: 1001
+      }))
+      .pipe(gulp.dest('./dest/iconfonts/'))
+  });
+ 
+  gulp.task('icons', ['iconfont']);
 
 // servido que mostrara los cambios
 gulp.task('default',() => {
