@@ -44,9 +44,9 @@ gulp.task('imagemin', () =>
  
   gulp.task('iconfont', function() {
     gulp.src(['./Components/svg/*.svg'])
-      .pipe(iconfontCSS({
+      .pipe(iconfontCss({
         fontName: fontName,
-        targetPath: './Components/Scss/_iconfont.scss',
+        targetPath: '_iconfont.scss',
         fontPath: '../fonts/'
       }))
       .pipe(iconfont({
@@ -56,10 +56,9 @@ gulp.task('imagemin', () =>
         normalize: true,
         fontHeight: 1001
       }))
-      .pipe(gulp.dest('./dest/iconfonts/'))
+      .pipe(gulp.dest('./dest/fonts/'))
   });
  
-  gulp.task('icons', ['iconfont']);
 
 // servido que mostrara los cambios
 gulp.task('default',() => {
@@ -69,6 +68,7 @@ gulp.task('default',() => {
 
     gulp.watch('Components/Scss/*.scss',['sass']);
     gulp.watch('Components/Pug/**/*.pug',['pug']);
+    gulp.watch('Components/svg/*.svg',['iconfont']);
 
 })
 
