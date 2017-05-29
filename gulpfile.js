@@ -1,6 +1,7 @@
 const gulp = require('gulp'),
       sass = require('gulp-sass'),
       pug = require('gulp-pug'),
+      babel = require('gulp-babel'),
       imagemin = require('gulp-imagemin'),
       iconfontCss = require('gulp-iconfont-css'),
       iconfont = require('gulp-iconfont'),
@@ -38,6 +39,14 @@ gulp.task('imagemin', () =>
         .pipe(gulp.dest('dist/images'))
 );
 
+// transpilacion de ecmac 6
+
+gulp.task('babel',() =>
+  gulp.src('./Components/Js/*.js')
+    .pipe(babel())
+    .pipe(gulp.dest('./dest/js'))
+);
+
 // trasnformacion icon font
 
  var fontName = 'demo-icons';
@@ -69,6 +78,7 @@ gulp.task('default',() => {
     gulp.watch('Components/Scss/*.scss',['sass']);
     gulp.watch('Components/Pug/**/*.pug',['pug']);
     gulp.watch('Components/svg/*.svg',['iconfont']);
+     gulp.watch('Components/Js/*.js',['babel']);
 
 })
 
