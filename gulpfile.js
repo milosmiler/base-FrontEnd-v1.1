@@ -5,6 +5,7 @@ const gulp = require('gulp'),
       imagemin = require('gulp-imagemin'),
       iconfontCss = require('gulp-iconfont-css'),
       iconfont = require('gulp-iconfont'),
+      sitemap = require('gulp-sitemap'),
       autoprefixer = require('gulp-autoprefixer'),
       browserSync = require('browser-sync').create();
 
@@ -67,6 +68,22 @@ gulp.task('babel',() =>
       }))
       .pipe(gulp.dest('./dest/fonts/'))
   });
+
+
+  //generar mapa de sitio
+
+  gulp.task('sitemap', function () {
+    gulp.src('build/**/*.html', {
+            read: false
+        })
+        .pipe(sitemap({
+            siteUrl: ' '
+        }))
+        .pipe(gulp.dest('./dest'));
+});
+
+
+
  
 
 // servido que mostrara los cambios
