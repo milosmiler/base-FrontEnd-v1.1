@@ -56,7 +56,7 @@ gulp.task('babel',() =>
       .pipe(iconfontCss({
         fontName: fontName,
         targetPath: '_iconfont.scss',
-        fontPath: '../fonts/'
+        fontPath: './dest/fonts/'
       }))
       .pipe(iconfont({
         fontName: fontName,
@@ -78,7 +78,7 @@ gulp.task('default',() => {
     gulp.watch('Components/Scss/*.scss',['sass']);
     gulp.watch('Components/Pug/**/*.pug',['pug']);
     gulp.watch('Components/svg/*.svg',['iconfont']);
-     gulp.watch('Components/Js/*.js',['babel']);
+    gulp.watch('Components/Js/*.js',['babel']);
 
 })
 
