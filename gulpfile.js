@@ -51,7 +51,6 @@ gulp.task('babel',() =>
 // trasnformacion icon font
 
  var fontName = 'demo-icons';
- 
   gulp.task('iconfont', function() {
     gulp.src(['./Components/svg/*.svg'])
       .pipe(iconfontCss({
@@ -73,7 +72,7 @@ gulp.task('babel',() =>
   //generar mapa de sitio
 
   gulp.task('sitemap', function () {
-    gulp.src('build/**/*.html', {
+    gulp.src('dest/**/*.html', {
             read: false
         })
         .pipe(sitemap({
@@ -92,10 +91,11 @@ gulp.task('default',() => {
         server:'./dest'
     });
 
-    gulp.watch('Components/Scss/*.scss',['sass']);
-    gulp.watch('Components/Pug/**/*.pug',['pug']);
+    gulp.watch('Components/Scss/**/*.scss',['sass']);
+    gulp.watch('Components/Pug/**/**/*.pug',['pug']);
     gulp.watch('Components/svg/*.svg',['iconfont']);
     gulp.watch('Components/Js/*.js',['babel']);
+    gulp.watch('dest/**/*.html', ['sitemap']);
 
 })
 
