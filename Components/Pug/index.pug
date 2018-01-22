@@ -2,9 +2,10 @@ doctype html
 html(lang="es")
 	head
 		meta(charset="utf-8")
-		title Nombre sitio
+		title Jairo Villalobos - Frond End
 		link(href="css/style.css", rel="stylesheet", type="text/css")
 		link(rel='shortcut icon', type='image/x-icon', href='images/favicon.ico')
+		link(rel="stylesheet" href="css/font-awesome.min.css")
 		meta(name='description', content='descripcion del sitio web')
 		meta(name='viewport', content='width=device-width, initial-scale=1')
 		meta(property='og:title', content=' ')
@@ -13,9 +14,12 @@ html(lang="es")
 		meta(property='og:description', content=' ')
 		meta(property='og:image', content=' ')
 	body
-		.container
-			include block/header.pug
-			include block/footer.pug
+		include block/cover.pug
+		include block/header.pug
+		include block/about.pug
+		include block/skill.pug
+		include block/artculos.pug
+		include block/footer.pug
 		script(src="js/jquery-1.11.3.min.js")
 		script(src='js/index.js', type="text/javascript")
 		script(src='js/main.js', type="text/javascript")

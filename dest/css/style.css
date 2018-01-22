@@ -6,6 +6,13 @@ Author URI:
 Description: 
 Version: 1.0
 */
+@import url("https://fonts.googleapis.com/css?family=Open+Sans:300,400,700,800");
+h1, h2, h3, h4 {
+  margin-top: 0px;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  color: #303030; }
+
 h1 {
   font-size: 138.5%; }
 
@@ -14,9 +21,6 @@ h2 {
 
 h3 {
   font-size: 108%; }
-
-h1, h2, h3 {
-  margin: 1em 0; }
 
 h1, h2, h3, h4, h5, h6, strong {
   font-weight: bold; }
@@ -70,11 +74,19 @@ article, aside, details, figcaption, figure, footer, header, hgroup, nav, sectio
 figure {
   margin: 0; }
 
+body {
+  font-family: 'Open Sans', sans-serif; }
+
 /* Utilities */
 * {
   box-sizing: border-box;
   margin: 0px;
   padding: 0px; }
+
+.flex {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex; }
 
 .hidden {
   display: none !important; }
@@ -97,6 +109,124 @@ figure {
 }*/
 /*** FONT FACE ***/
 /*** GENERAL ***/
+section.cover {
+  width: 100%;
+  min-height: 40vw;
+  -webkit-box-pack: end;
+      -ms-flex-pack: end;
+          justify-content: flex-end;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  background: url(../images/banner.png) no-repeat center top;
+  background-repeat: no-repeat;
+  background-position: center center;
+  background-size: cover; }
+  section.cover .item-personal {
+    padding-right: 15px; }
+    section.cover .item-personal h2 {
+      font-size: 60px;
+      font-weight: 300;
+      letter-spacing: -2px; }
+      section.cover .item-personal h2 span {
+        font-weight: 700; }
+    section.cover .item-personal p {
+      font-size: 20px;
+      line-height: 24px; }
+
+header {
+  width: 100%;
+  height: 60px;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  padding: 0 15px; }
+  header h1 {
+    color: #303030;
+    font-size: 18px; }
+  header nav a {
+    text-decoration: none;
+    font-size: 16px;
+    font-weight: 300;
+    color: #303030;
+    margin-right: 15px; }
+    header nav a:last-child {
+      margin-right: 0; }
+
+footer {
+  width: 100%;
+  padding: 21px 0;
+  color: #fff;
+  background-color: #303030;
+  text-align: center; }
+  footer p {
+    font-size: 18px;
+    color: #fff;
+    text-align: center;
+    margin-bottom: 0; }
+
+section.about {
+  width: 100%;
+  height: auto;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -ms-flex-wrap: wrap;
+      flex-wrap: wrap;
+  padding: 100px 0; }
+  section.about h2 {
+    text-align: center;
+    width: 100%;
+    font-size: 34px;
+    line-height: 38px; }
+  section.about .avatar-social {
+    max-width: 320px;
+    margin-bottom: 50px; }
+    section.about .avatar-social figure {
+      width: 200px;
+      height: 200px;
+      border-radius: 100px;
+      background: #ccc;
+      margin-top: 10px;
+      margin-bottom: 30px; }
+      section.about .avatar-social figure img {
+        width: 100%; }
+    section.about .avatar-social ul {
+      width: 100%;
+      list-style: none;
+      -ms-flex-pack: distribute;
+          justify-content: space-around;
+      margin: 0; }
+      section.about .avatar-social ul li a {
+        color: #303030;
+        font-size: 16px;
+        line-height: 16px;
+        text-decoration: none; }
+  section.about .item-content {
+    width: 100%;
+    padding: 40px 15px; }
+    section.about .item-content p {
+      font-size: 16px;
+      margin-bottom: 20px; }
+    section.about .item-content a {
+      width: 200px;
+      height: 40px;
+      margin: auto;
+      display: block;
+      color: #fff;
+      background-color: #303030;
+      text-decoration: none;
+      line-height: 40px;
+      text-align: center;
+      font-weight: 700;
+      text-indent: -3px;
+      margin-top: 50px; }
+      section.about .item-content a i.fa-download {
+        margin-right: 10px; }
+
 /********** RESPONSIVE ***********/
 @media only screen and (min-width: 1024px) and (max-width: 1280px) {
   html {
