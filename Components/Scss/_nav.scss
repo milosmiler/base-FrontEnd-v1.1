@@ -1,0 +1,61 @@
+nav.menu{
+	width: 100%;
+	height: 50px;
+	line-height: 50px;
+	text-align: center;
+	a{
+		text-decoration: none;
+		margin-right: 20px;
+		font-size: 16px;
+		color: #303030;
+		padding: 3px 5px;
+		&:hover{
+			background-color: #303030;
+			color: #fff;
+		}
+		&.close{
+			text-align: right;
+			display: none;
+			i.fa.fa-times{
+				font-size: 30px;
+				cursor: pointer;
+			}
+			&:hover{
+				background:transparent;
+				color:#303030;
+			}
+		}
+	}
+	&.open{
+		transform: translateX(0px);
+	}
+
+}
+
+
+span.burger{
+		margin-top: 20px;
+		float: right;
+		padding: 0px 10px;
+		cursor: pointer;
+    	position: relative;
+    		display: none;
+			i.fa.fa-bars{
+				font-size: 30px;
+			}
+		
+	}
+
+.overlay{
+	width: 100%;
+	position: fixed;
+	background: rgba(0, 0, 0, 0.8);
+	height: 100%;
+	opacity: 0;
+	z-index: -1;
+	transition: opacity 300ms linear;
+	&.open{
+		z-index: 1;
+		opacity: 1;
+	}
+}

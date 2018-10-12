@@ -2,5 +2,15 @@ h1,h2,h3,h4{
 	margin-top: 0px;
 	-webkit-font-smoothing: antialiased;
     -moz-osx-font-smoothing: grayscale;
-    color: #303030;
+}
+
+body{
+	font-family: 'Open Sans', sans-serif;
+	color: var(--negro);
+}
+:root{
+	
+	--rojo: red;
+	--azul: blue;
+	--negro: #000;
 }
