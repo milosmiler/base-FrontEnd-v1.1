@@ -4,6 +4,7 @@
     <meta charset="utf-8">
     <title>- Frond End</title>
     <link href="css/style.css" rel="stylesheet" type="text/css">
+    <link href="css/bootstrap.min.css" rel="stylesheet" type="text/css">
     <link rel="shortcut icon" type="image/x-icon" href="images/favicon.ico">
     <link rel="stylesheet" href="css/font-awesome.min.css">
     <meta name="description" content="descripcion del sitio web">
@@ -15,9 +16,26 @@
     <meta property="og:image" content=" ">
   </head>
   <body>
-    <nav class="menu"><a class="close"><i class="fa fa-times"></i></a><a href="">demo<i class="plane"></i></a><a href="">demo</a><a href="">demo</a><a href="">demo</a><a href="">demo</a></nav><span class="burger"><i class="fa fa-bars"></i></span>
-    <div class="overlay"></div>
+    <header>
+      <div class="search-info">
+        <div class="container">
+          <form>
+            <input type="search" placeholder="Buscar...."><i class="fas fa-search"></i>
+          </form>
+        </div>
+      </div>
+      <div class="container flex">
+        <figure class="logo"><img src="images/elcolef.svg" alt="elcolef"></figure>
+        <nav class="menu"><a class="close"><i class="fa fa-times"></i></a><a href="">Inicio</a><a href="">Acerca de</a><a href="">Investigación</a><a href="">Posgrados</a><a href="">Librerías</a><a href="">Biblioteca</a></nav><span class="burger"><i class="fa fa-bars"></i></span>
+        <div class="overlay"></div>
+      </div>
+    </header>
+    <div class="dropdown show"><a class="btn-secondary dropdown-toggle" id="dropdownMenuLink" href="#" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">Dropdown link</a>
+      <div class="dropdown-menu" aria-labelledby="dropdownMenuLink"><a class="dropdown-item" href="#">Action</a><a class="dropdown-item" href="#">Another action</a><a class="dropdown-item" href="#">Something else here</a></div>
+    </div>
     <script src="js/jquery-1.11.3.min.js"></script>
+    <script src="js/bootstrap.bundle.min.js"></script>
+    <script src="js/bootstrap.min.js"></script>
     <script src="js/main.js" type="text/javascript"></script>
   </body>
 </html>

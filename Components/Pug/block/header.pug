@@ -1,0 +1,28 @@
+header
+	.search-info
+		.container
+			form
+				input(type="search", placeholder="Buscar....")
+				i.fas.fa-search
+	.container.flex
+		figure.logo
+			img(src="images/elcolef.svg" alt="elcolef")
+		nav.menu
+			a.close
+				i.fa.fa-times
+			a(href="") Inicio
+			a(href="") Acerca de
+			a(href="") Investigación
+			a(href="") Posgrados
+			a(href="") Librerías
+			a(href="") Biblioteca
+		span.burger
+			i.fa.fa-bars
+		.overlay
+
+.dropdown.show
+	a#dropdownMenuLink.btn-secondary.dropdown-toggle(href='#', role='button', data-toggle='dropdown', aria-haspopup='true', aria-expanded='false') Dropdown link
+	.dropdown-menu(aria-labelledby='dropdownMenuLink')
+		a.dropdown-item(href='#') Action
+		a.dropdown-item(href='#') Another action
+		a.dropdown-item(href='#') Something else here
